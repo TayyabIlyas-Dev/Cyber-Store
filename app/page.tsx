@@ -5,19 +5,21 @@ import { title } from "process";
 import HeroOne from "./components/HeroOne";
 import Navbar from "./components/Navbar";
 import HeroTwo from "./components/HeroTwo";
+import HeroThree from "./components/HeroThree";
 
 
 export default function Home() {
   return (
     <>
-    <div>
-    <Navbar/>
-    </div>
+   
     <div>
       <HeroOne/>
     </div>
     <div>
       <HeroTwo/>
+    </div>
+    <div>
+      <HeroThree/>
     </div>
     </>
    
