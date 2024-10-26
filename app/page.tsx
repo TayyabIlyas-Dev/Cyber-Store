@@ -6,6 +6,7 @@ import HeroOne from "./components/HeroOne";
 import Navbar from "./components/Navbar";
 import HeroTwo from "./components/HeroTwo";
 import HeroThree from "./components/HeroThree";
+import HeroFour from "./components/HeroFour";
 
 
 export default function Home() {
@@ -20,6 +21,9 @@ export default function Home() {
     </div>
     <div>
       <HeroThree/>
+    </div>
+    <div>
+      <HeroFour/>
     </div>
     </>
    
