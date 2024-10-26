@@ -27,7 +27,7 @@ const HeroOne: React.FC = () => {
           </div>
 
           {/* Image Section */}
-          <div className='iphone-main-model flex justify-center sm:justify-start px-8 sm:px-2 pt-2 sm:pt-20'>
+          <div className='iphone-main-model flex justify-center sm:justify-start px-8 sm:px-2 pt-24 sm:pt-20'>
             <img 
               className='w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] max-w-full' 
               src="/iphone-model.png" 
