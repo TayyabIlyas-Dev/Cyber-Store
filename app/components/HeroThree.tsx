@@ -23,7 +23,7 @@ const HeroThree: React.FC = () => {
         {categories.map((category, index) => (
           <div
             key={index}
-            className="flex flex-col cursor-pointer items-center p-4 w-[145px] sm:w-[180px] md:w-[200px] lg:w-[340px] xl:[400px] bg-gray-100 rounded-md shadow-md hover:shadow-lg transition-shadow"
+            className="flex flex-col cursor-pointer items-center p-4 w-[140px] sm:w-[180px] md:w-[200px] lg:w-[340px] xl:[400px] bg-gray-100 rounded-md shadow-md hover:shadow-lg transition-shadow"
           >
             {category.icon}
             <span className="mt-2 text-center text-sm font-medium">
