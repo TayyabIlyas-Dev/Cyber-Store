@@ -1,47 +1,10 @@
 'use client'
-import React, { useState } from "react";
+import React from "react";
 import { FaHeartBroken } from "react-icons/fa";
-
-type FavoriteItem = {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-};
-
-const initialFavoriteItems: FavoriteItem[] = [
-  {
-    id: 1,
-    name: "Product 1",
-    price: 200,
-    image: "/vision-pro-sm.png",
-  },
-  {
-    id: 2,
-    name: "Product 2",
-    price: 300,
-    image: "/playstation-sm.png",
-  },
-  {
-    id: 3,
-    name: "Product 2",
-    price: 300,
-    image: "/macbook-model-sm.png",
-  },
-  {
-    id: 4,
-    name: "Product 2",
-    price: 300,
-    image: "/airpods-pro-sm.png",
-  },
-];
+import { useFavorites } from "../context/FavoritesContext"; // Use the custom hook
 
 const FavoritesPage: React.FC = () => {
-  const [favoriteItems, setFavoriteItems] = useState<FavoriteItem[]>(initialFavoriteItems);
-
-  const handleRemoveFavorite = (id: number) => {
-    setFavoriteItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
+  const { favoriteItems, removeFromFavorites } = useFavorites(); // Use the hook to get favorite items
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4">
@@ -52,7 +15,7 @@ const FavoritesPage: React.FC = () => {
         <div className="space-y-4">
           {favoriteItems.length > 0 ? (
             favoriteItems.map((item) => (
-              <div key={item.id} className="flex items-center justify-between p-4 border-b">
+              <div key={item.id} className="flex items-center justify-between p-4 border-b bg-gray-10 hover:bg-gray-100 transition-all">
                 <div className="flex items-center space-x-4">
                   <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded" />
                   <div>
@@ -62,7 +25,7 @@ const FavoritesPage: React.FC = () => {
                 </div>
                 <button
                   className="text-red-600 hover:text-red-800"
-                  onClick={() => handleRemoveFavorite(item.id)}
+                  onClick={() => removeFromFavorites(item.id)} // Remove from favorites when clicked
                 >
                   <FaHeartBroken className="text-lg" />
                 </button>
